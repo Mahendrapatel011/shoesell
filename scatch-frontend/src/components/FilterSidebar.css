@@ -1,0 +1,84 @@
+/* src/components/FilterSidebar.css */
+.filter-sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+  }
+  
+  .sidebar-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+  }
+  
+  .sidebar-content {
+    padding: var(--spacing-lg);
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  
+  .clear-filters-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: var(--spacing-xl);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-error);
+    background-color: #fee2e2;
+    border: 1px solid var(--color-error);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+  }
+  
+  .filter-sidebar h4 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .category-list li {
+    padding: 12px;
+    cursor: pointer;
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .category-list li:hover {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+  }
+  
+  .category-list li.active {
+    background-color: var(--color-accent);
+    color: white;
+    font-weight: 600;
+  }

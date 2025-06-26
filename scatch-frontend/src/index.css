@@ -1,0 +1,88 @@
+/* src/index.css */
+
+/* 1. MODERN DESIGN SYSTEM: CSS VARIABLES */
+:root {
+  /* Fonts */
+  --font-primary: 'Inter', sans-serif;
+
+  /* Colors */
+  --color-primary: #111827; /* Dark gray for primary text and elements */
+  --color-accent: #3b82f6; /* A vibrant, modern blue for accents, links, and buttons */
+  --color-accent-hover: #2563eb; /* A darker shade of the accent for hover states */
+  
+  --color-text-primary: #1f2937; /* Very dark gray for main text content */
+  --color-text-secondary: #6b7280; /* Lighter gray for secondary text, placeholders */
+  
+  --color-background: #f9fafb; /* A very light, off-white for the main page background */
+  --color-surface: #ffffff; /* Pure white for cards, modals, and navbars */
+  --color-border: #e5e7eb; /* Light gray for borders and dividers */
+  
+  --color-success: #10b981; /* Green for success messages/toasts */
+  --color-error: #ef4444;   /* Red for error messages/toasts */
+  --color-warning: #f59e0b;  /* Amber/yellow for warnings or star ratings */
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Shadows - Subtle and modern */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+}
+
+/* 2. GLOBAL RESETS & BASE STYLES */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-accent);
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  line-height: 1.2;
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Remove default list styles */
+ul, ol {
+    list-style: none;
+}

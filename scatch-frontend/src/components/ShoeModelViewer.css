@@ -1,0 +1,56 @@
+/* src/components/ShoeModelViewer.css */
+
+.shoe-viewer-container {
+    width: 100%;
+    height: 500px; /* Define a fixed height for the vertical slider */
+    padding: 20px 0;
+    position: relative;
+  }
+  
+  .shoe-viewer-container .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .shoe-viewer-container .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .shoe-viewer-container .swiper-slide img {
+    display: block;
+    width: 90%;
+    max-width: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+    transform: rotate(20deg); /* Give the shoes a slight angle */
+    transition: transform 0.3s ease;
+  }
+  
+  .shoe-viewer-container .swiper-slide-active img {
+      transform: rotate(0deg) scale(1.1); /* Make the active shoe straight and slightly bigger */
+  }
+  
+  /* Customizing swiper pagination for vertical layout */
+  .shoe-viewer-container .swiper-pagination-vertical.swiper-pagination-bullets, 
+  .shoe-viewer-container .swiper-vertical > .swiper-pagination-bullets {
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+  
+  .shoe-viewer-container .swiper-pagination-bullet {
+      background-color: var(--color-primary);
+      width: 8px;
+      height: 8px;
+      opacity: 0.7;
+  }
+  
+  .shoe-viewer-container .swiper-pagination-bullet-active {
+      opacity: 1;
+      background-color: var(--color-accent);
+  }

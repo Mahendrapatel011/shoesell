@@ -1,0 +1,311 @@
+/* Best practice: Place this :root block in a global CSS file like index.css or App.css */
+:root {
+  --color-primary-dark: #2a1b3d;    /* Dark Purple from image */
+  --color-accent-orange: #f39c12;   /* Orange from image */
+  --color-accent-orange-hover: #e67e22;
+  --color-background-light: #fffcf5; /* Light cream for mega menu */
+  --color-text-on-dark: #f0f0f0;
+  --color-text-primary: #333;
+  --color-text-secondary: #666;
+  --color-surface: #ffffff;
+  --color-border: #e0e0e0;
+  --color-sale: #e74c3c;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-on-dark);
+  padding: 8px var(--spacing-lg);
+  font-size: 0.8rem;
+}
+
+.top-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.top-bar-left, .top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.top-bar-left span {
+  letter-spacing: 0.5px;
+}
+
+.top-bar-center a {
+  color: var(--color-text-on-dark);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.top-bar-center a:hover {
+  color: var(--color-accent-orange);
+}
+
+.top-search-form {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.top-search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 4px 8px;
+  width: 150px;
+  transition: width 0.3s;
+}
+.top-search-input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+.top-search-input:focus {
+  width: 200px;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.top-search-form button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.top-bar-icon {
+  color: var(--color-text-on-dark);
+  font-size: 1.2rem;
+  position: relative;
+  transition: color 0.2s;
+}
+.top-bar-icon:hover {
+  color: var(--color-accent-orange);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: var(--color-sale);
+  color: white;
+  border-radius: 50%;
+  padding: 1px 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border: 1px solid var(--color-primary-dark);
+}
+
+/* --- Main Header --- */
+.main-header {
+  background-color: var(--color-surface);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 998; /* Below top-bar overlay */
+  border-bottom: 1px solid var(--color-border);
+  transition: box-shadow 0.3s;
+}
+.main-header.mega-menu-active {
+  box-shadow: var(--shadow-lg);
+}
+
+.main-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  padding: 0 var(--spacing-lg);
+}
+
+.navbar-logo {
+  color: var(--color-primary-dark);
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.nav-item {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+.nav-item:hover {
+  color: var(--color-accent-orange);
+  border-bottom-color: var(--color-accent-orange);
+}
+.nav-item.sale {
+  color: var(--color-sale);
+}
+.nav-item.sale:hover {
+  border-bottom-color: var(--color-sale);
+}
+
+.menu-icon {
+  display: none;
+}
+.mobile-only-header {
+    display: none;
+}
+.desktop-nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+
+/* --- Mega Menu --- */
+.with-megamenu {
+  position: relative;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 600px;
+  background-color: var(--color-background-light);
+  box-shadow: var(--shadow-lg);
+  border-top: 3px solid var(--color-accent-orange);
+  padding: var(--spacing-xl);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 1000;
+  border-radius: 0 0 8px 8px;
+}
+
+.with-megamenu:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mega-menu-content {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.mega-menu-column h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mega-menu-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mega-menu-column ul li a {
+  display: block;
+  padding: 8px 0;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.mega-menu-column ul li a:hover {
+  color: var(--color-accent-orange);
+}
+
+.mega-menu-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.mega-menu-image-item {
+  text-decoration: none;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+.mega-menu-image-item img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.mega-menu-image-item span {
+  display: block;
+  margin-top: 8px;
+  font-weight: 500;
+}
+.mega-menu-image-item:hover img {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Responsive Styles --- */
+@media screen and (max-width: 1024px) {
+  .top-bar-center, .top-bar-left {
+    display: none;
+  }
+  .top-bar-container {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-nav-links {
+    display: none;
+  }
+  .top-search-form {
+      display: none;
+  }
+  .menu-icon {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text-on-dark);
+  }
+  
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: right 0.4s ease-in-out;
+    background-color: var(--color-surface);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);

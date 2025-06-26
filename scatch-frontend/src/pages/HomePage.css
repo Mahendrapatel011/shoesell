@@ -1,0 +1,175 @@
+/* src/pages/HomePage.css */
+
+.homepage-container {
+    width: 100%;
+  }
+  
+  /* --- FILTER SLIDE-IN PANEL --- */
+  .filter-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .filter-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .filter-sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    max-width: 90%;
+    height: 100%;
+    background-color: var(--color-surface);
+    z-index: 1001;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: var(--shadow-lg);
+    overflow-y: auto;
+  }
+  .filter-sidebar-wrapper.visible {
+    transform: translateX(0);
+  }
+  
+  /* --- CONTENT TOOLBAR --- */
+  .content-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .filter-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 10px 16px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .filter-toggle-btn:hover {
+    background-color: var(--color-background);
+    border-color: var(--color-text-secondary);
+  }
+  .filter-toggle-btn i {
+    font-size: 1rem;
+  }
+  
+  .product-count {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+  
+  .sort-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  .sort-container label {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+  .sort-dropdown {
+    padding: 8px 12px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    cursor: pointer;
+  }
+  
+  /* --- PRODUCT GRID --- */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  /* --- NO PRODUCTS FOUND STATE --- */
+  .no-products-found {
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+  }
+  .no-products-found h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  .no-products-found p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+  }
+  .clear-filters-btn-main {
+    padding: 12px 24px;
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  /* --- PAGINATION --- */
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-2xl);
+  }
+  .pagination-controls button {
+    padding: 10px 20px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    font-weight: 600;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+  }
+  .pagination-controls button:hover:not(:disabled) {
+    background-color: var(--color-accent);
+    color: var(--color-surface);
+    border-color: var(--color-accent);
+  }
+  .pagination-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+    .product-count {
+      display: none;
+    }
+    .content-toolbar {
+      gap: var(--spacing-md);
+    }
+    .sort-container {
+      flex-grow: 1;
+      justify-content: flex-end;
+    }
+  }
+  @media (max-width: 480px) {
+      .sort-container label {
+          display: none;
+      }
+      .product-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: var(--spacing-md);
+      }
+  }

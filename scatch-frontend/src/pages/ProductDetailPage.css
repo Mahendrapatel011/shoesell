@@ -1,0 +1,181 @@
+.product-detail-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail-image-container {
+  flex: 1;
+}
+
+.product-detail-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.product-detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-detail-name {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem; /* Reduced margin */
+}
+
+/* --- NEW: RATING DISPLAY --- */
+.product-detail-rating {
+  margin-bottom: 1rem;
+}
+.product-detail-rating .rating-text {
+  font-size: 1rem; /* Make text bigger on detail page */
+}
+
+.product-detail-price {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.product-detail-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.product-detail-info .add-to-cart-btn {
+  width: auto;
+  padding: 12px 24px;
+  align-self: flex-start;
+  background-color: #2d3748;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* --- NEW: REVIEWS SECTION --- */
+.reviews-section-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+.reviews-section-container h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- NEW: REVIEW FORM --- */
+.review-form-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.review-form-container h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.submit-review-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #2b6cb0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-review-btn:hover:not(:disabled) {
+  background-color: #2c5282;
+}
+
+.submit-review-btn:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+
+/* --- NEW: REVIEWS LIST --- */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.review-item {
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.review-item strong {
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
+.review-item .star-rating {
+  margin: 0.5rem 0;
+}
+
+.review-comment {
+  margin: 0.75rem 0;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.review-date {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .product-detail-container {
+    flex-direction: column;
+  }
+}

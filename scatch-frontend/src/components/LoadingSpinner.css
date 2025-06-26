@@ -1,0 +1,27 @@
+/* src/components/LoadingSpinner.css */
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 400px; /* Give it more height to feel centered on the page */
+}
+  
+@keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+  
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 8px solid var(--color-border); /* Light grey using our variable */
+    border-top: 8px solid var(--color-accent); /* Blue using our variable */
+    border-radius: 50%;
+    animation: spinner 1.2s linear infinite;
+}

@@ -1,0 +1,82 @@
+/* src/components/ProductCard.css */
+
+.product-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  border-radius: var(--border-radius-xl, 20px);
+  padding: var(--spacing-md, 20px); /* CHANGED: Padding thoda kam kiya */
+  overflow: hidden;
+  height: 280px; /* CHANGED: Card ki height kam kar di */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #000;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  position: absolute;
+  /* --- PHOTO KO SEEDHA KARNE KE LIYE CHANGES --- */
+  top: 5%;      /* CHANGED: Image ko upar se thoda neeche kiya */
+  left: 10%;    /* CHANGED: Center karne ke liye */
+  width: 80%;   /* CHANGED: Thoda chhota kiya taaki card me fit ho */
+  height: 55%;  /* ADDED: Image ke liye ek height define ki */
+  object-fit: contain;
+  /* transform: rotate(-25deg); */ /* REMOVED: Teda karne wala effect hata diya */
+  transition: transform 0.4s ease;
+  z-index: 1;
+}
+
+.product-card:hover .product-image {
+  /* Sirf zoom hoga, rotate nahi hoga */
+  transform: scale(1.1); /* CHANGED */
+}
+
+.product-info {
+  position: absolute;
+  bottom: var(--spacing-md, 20px); /* CHANGED: Padding ke saath match kiya */
+  left: var(--spacing-md, 20px);   /* CHANGED: Padding ke saath match kiya */
+  z-index: 2;
+}
+
+.product-name {
+  font-size: 1.3rem; /* CHANGED: Font size thoda chhota kiya */
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.product-price {
+  font-size: 1.1rem; /* CHANGED: Font size thoda chhota kiya */
+  font-weight: 500;
+  margin: 4px 0 0 0;
+}
+
+.add-to-cart-button {
+  position: absolute;
+  bottom: var(--spacing-md, 20px); /* CHANGED */
+  right: var(--spacing-md, 20px);  /* CHANGED */
+  width: 42px;    /* CHANGED: Button ka size chhota kiya */
+  height: 42px;   /* CHANGED: Button ka size chhota kiya */
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem; /* CHANGED */
+  font-weight: 300;
+  color: #000;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.add-to-cart-button:hover {
+  transform: scale(1.1);
+  background-color: #f0f0f0;
+}

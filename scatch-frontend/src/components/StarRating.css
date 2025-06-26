@@ -1,0 +1,20 @@
+/* src/components/StarRating.css */
+
+.star-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.stars {
+    color: var(--color-warning); /* Use our CSS variable for the star color */
+    display: flex;
+    gap: 2px;
+    font-size: 1rem;
+}
+
+.rating-text {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}

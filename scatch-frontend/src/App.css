@@ -1,0 +1,29 @@
+/* src/App.css */
+
+/*
+  This file styles the main application shell.
+  It ensures that the footer sticks to the bottom,
+  and the main content area has consistent padding.
+*/
+
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.app-container {
+  flex: 1; /* This makes the main content area grow and push the footer down */
+  width: 100%;
+  max-width: 1280px; /* A wider max-width for modern screens */
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-lg); /* Vertical and horizontal padding */
+}
+
+/* --- GLOBAL RESPONSIVE ADJUSTMENTS --- */
+@media screen and (max-width: 768px) {
+  main.app-container {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}
